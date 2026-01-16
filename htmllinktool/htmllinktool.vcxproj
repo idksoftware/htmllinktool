@@ -133,6 +133,7 @@
     <ClCompile Include="LogFilename.cpp" />
     <ClCompile Include="LogName.cpp" />
     <ClCompile Include="mdhtmllinktool.cpp" />
+    <ClCompile Include="options.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CIDKFileFind.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="LinkLine.h" />
     <ClInclude Include="LogFilename.h" />
     <ClInclude Include="LogName.h" />
+    <ClInclude Include="options.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

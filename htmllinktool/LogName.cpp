@@ -57,9 +57,7 @@ LogName::LogName() {
 
 }
 
-LogName::~LogName() {
-	// TODO Auto-generated destructor stub
-}
+
 int LogName::checkLogSize(const char *logPath, uint64_t maxSize) {
 	uintmax_t size = 0;
 

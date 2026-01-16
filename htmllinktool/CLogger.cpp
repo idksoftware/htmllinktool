@@ -524,30 +524,45 @@ const char *CLogger::levelStr(CLogger::Level level) {
 	return "FATAL";
 }
 
+bool isEquals(const std::string& a, const std::string& b)
+{
+	if (a.length() != b.length())
+	{
+		return false;
+	}
+
+	return std::equal(a.begin(), a.end(),
+		b.begin(), b.end(),
+		[](char a, char b)
+		{
+			return tolower(a) == tolower(b);
+		});
+}
+
 CLogger::Level CLogger::toLevel(const std::string &s) {
 	CLogger::Level level;
-	if (s.compare("TRACE") == 0) {
+	if (isEquals(s,"trace")) {
 		level = Level::TRACE;
 	}
-	else if (s.compare("FINE") == 0) {
+	else if (isEquals(s, "fine") == 0) {
 		level = Level::FINE;
 	}
-	else if (s.compare("INFO") == 0) {
+	else if (isEquals(s, "info") == 0) {
 		level = Level::INFO;
 	}
-	else if (s.compare("STATUS") == 0) {
+	else if (isEquals(s, "status") == 0) {
 		level = Level::STATUS;
 	}
-	else if (s.compare("SUMMARY") == 0) {
+	else if (isEquals(s, "summary") == 0) {
 		level = Level::SUMMARY;
 	}
-	else if (s.compare("WARNING") == 0) {
+	else if (isEquals(s, "warning") == 0) {
 		level = Level::WARNING;
 	}
-	else if (s.compare("ERROR") == 0) {
+	else if (isEquals(s, "error") == 0) {
 		level = Level::ERR;
 	}
-	else if (s.compare("FATAL") == 0) {
+	else if (isEquals(s, "fatal") == 0) {
 		level = Level::FATAL;
 	} else {
 		level = Level::UNKNOWN;

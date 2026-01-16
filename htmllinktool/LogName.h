@@ -52,7 +52,7 @@ public:
 	/// Constructor
 	LogName();
 	/// Destructor
-	virtual ~LogName();
+	virtual ~LogName() = default;
 	/// @brief Makes the log file name base on size and date of previous log files in the directory
 	/// passed.
 	/// @param logPath - path to look for previous logs.
